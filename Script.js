@@ -9,6 +9,8 @@ var vm = new Vue({
         website:'https://www.bbc.com',
         search:'',
         read:true,
+        error:alert("There was a problem creating your account"),
+        submit:true,
         objectArray:[
         {title:"Today's highlights", number:12},
         {title:"Last Week Highlights", number:10},
@@ -31,13 +33,11 @@ var vm = new Vue({
 
         },
         alert:function(){
-            alert("You are trying to visit a new website");
+            alert("Your account has been created succesfully");
         },
         searching:function(){
             console.log("You typed a number for you search");
         }
-
-
     },
     computed: {
         computedClasses:function(){
