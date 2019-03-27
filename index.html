@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Blog Test</title>
+        <link href="styles.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    </head>
+        <body>
+            <div id="Blog">
+
+                <!-- Learning about displaying data from the data object using vuejs -->
+                <h1>{{title}}</h1>
+                <!--  Learning about the methods in vue js and how to pass parameters-->
+                <h1>{{greet('Morning')}}</h1>
+                <!--  Learning about data binding using the v-bind which can also be a :-->
+                <!--  Learning about access modifiers such as prevent and ounce that are used along with the v-on directive that is used for event-on can also be represented as @-->
+                <p>Access latest news here <a @click.prevent="alert" :href="website">BBC</a></p><br>
+                <p>Search articles according to the index here</p>
+                <!--  Learning about v-on directive click events that call a given function when clicked. These functions are defined in the methods objects of the vue instance-->
+                <button v-on:click='add(1)'>Add</button>
+                <button v-on:dblclick='substract(1)'>substract</button>
+                <p>Article Index {{number}}</p>
+                <p>Too lazy move 10 times up the index</p>
+                <button v-on:click='add(10)'>Add</button>
+                <!--  listening to doubleclicks-->
+                <button v-on:dblclick='substract(10)'>substract</button>
+                <p>Article Index {{number}}</p>
+                <!--  Learning about other eventlisteners like the keyboard keyups that can as well be modified to listen to specific keys-->
+                <input type="text" :value="search" v-show=true @keyup.enter="searching" >
+                <p> Let's play around with data coordinates inorder to learn about the mousemove event</p>
+                <!--  Learning about the mousemove event that detects movement of the mouse button-->
+                <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+            </div>
+            <script src="Script.js" type="text/javascript"></script>
+        </body>
+</html>
