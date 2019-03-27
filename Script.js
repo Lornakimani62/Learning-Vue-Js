@@ -7,7 +7,8 @@ var vm = new Vue({
         x:0,
         y:0,
         website:'https://www.bbc.com',
-        search:'Search for blog articles',
+        search:'',
+        read:true,
         objectArray:[
         {title:"Today's highlights", number:12},
         {title:"Last Week Highlights", number:10},
@@ -37,5 +38,12 @@ var vm = new Vue({
         }
 
 
+    },
+    computed: {
+        computedClasses:function(){
+            return {
+                readArticle: this.read
+            }
+        }
     },
     });

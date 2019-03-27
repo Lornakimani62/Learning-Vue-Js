@@ -4,3 +4,11 @@
     text-align: center;
     border: 2px solid #333;
 }
+
+#read{
+    background: blue;
+}
+
+.readArticle #read{
+    background: #33bb55
+}
