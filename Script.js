@@ -1,4 +1,17 @@
-var vm = new Vue({
+Vue.component("sources", {
+    template: '<i><p>These are the news from your most trusted newssource {{name}}</p></i>',
+    data: function(){
+        return{
+            name: "British Broad Casting",
+        }
+    }
+});
+
+var one = new Vue({
+    el:"#vueInstance1",
+});
+
+var two = new Vue({
     el: "#Blog",
     data:{
         title:'Today Blog highlights',
@@ -7,13 +20,13 @@ var vm = new Vue({
         x:0,
         y:0,
         website:'https://www.bbc.com',
-        search:'',
+        search:"Ruto",
         read:true,
         submit:true,
         objectArray:[
         {title:"Raila's probe for the 2022 presidency"},
         {title:"The causes of early teenage pregnancy"},
-        {title:"UhuRuto in trobule with the many corruption scandals facing Ruto", number:10},
+        {title:"UhuRuto in trobule with the many corruption scandals facing Ruto"},
     ],
     },
     methods: {
@@ -33,10 +46,13 @@ var vm = new Vue({
 
         },
         alert:function(){
-            alert("Your account has been created succesfully");
+            alert("You are about to leave this page")
+        },
+        alerted:function(){
+            this.name=this.$refs.input.value
         },
         searching:function(){
-            console.log("You typed a number for you search");
+            console.log(this.$refs);
         }
     },
     computed: {

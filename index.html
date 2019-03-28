@@ -14,23 +14,40 @@
         <body>
             <div class="container">
             <div id="Blog">
+                <!-- A component is a resusable piece of code that can be used in different vue instances. If I want the same data to be dispalyed on different vue instances i use a component-->
+
+                <div id="vueInstance1">
+                    <sources v-show ="false"></sources>
+                </div>
+
 
                 <!-- Learning about displaying data from the data object using vuejs -->
-                <h1>{{title}}</h1>
+                <h1>{{title}}</h1> <sources></sources>
 
-                <!--  Learning about the methods in vue js and how to pass parameters-->
-                <h1>{{greet('Morning')}}</h1>
-
+                <!-- Learning about refs that are used to acquire more information about elements they can be used to get data from the user and save it to a data objwct say for example get a name from a user and say a greeting using the same name -->
+                <!--  Using v-if and v-else-if to display information based on whether an input is true or false -->
+                <p>Create an account with us</p>
+                <div class="input-group mb-3">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" ref="input">
+                </div>
+                <div class="input-group-append">
+                   <button class="btn btn-outline-primary"  @click="alerted()"  type="button" id="inputGroupFileAddon04" v-if="submit" >Submit</button>
+               </div>
                 <!--  Learning about data binding using the v-bind which can also be a :-->
                 <!--  Learning about access modifiers such as prevent and ounce that are used along with the v-on directive that is used for event-on can also be represented as @-->
-                <p>Access latest news here <a @click.prevent="alert" :href="website">BBC</a></p><br>
+                <p>Thank you for creating an account with us <a @click.prevent="alert" :href="website">Contact Us</a> for any queries
 
-                <!-- Looping through objects and arrays in vue js using v-for --> 
+                <!--  Learning about the methods in vue js and how to pass parameters-->
+                <h4>{{greet('Morning')}} Here are some of today's newshighlight</h4>
+
+                <!-- Looping through objects and arrays in vue js using v-for -->
                 <!--  To loop through objects in an array without having to know their names we use the key value pair idea-->
-                <h1>Today's Highlights</h1>
-                    <template v-for='x in objectArray'>
+                    <template v-for='(x,index) in objectArray'>
                         <div v-for="(val,key) in x">
-                            <h5>{{val}}</h5>
+                            <h6>{{index}} {{val}}</h6>
                         </div>
                     </template>
 
@@ -53,25 +70,13 @@
 
                 <p> Let's play around with data coordinates inorder to learn about the mousemove event</p>
                 <!--  Learning about the mousemove event that detects movement of the mouse button-->
-                <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div><br>
+                <div id="canvas" @mousemove="updateXY">{{x}},{{y}}</div><br>
 
                 <!--  using v-bind to create dynamic classes that change sytles based on user input-->
                 <p>Click the button below to read the article</p>
                 <div :class="computedClasses" @click="read=!read">
                     <button id="read" class="btn btn" >Read Article</button>
                 </div>
-
-                <!--  Using v-if and v-else-if to display information based on whether an input is true or false -->
-                <p>Create an account with us</p>
-                <div class="input-group mb-3">
-                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">@</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group-append">
-                   <button class="btn btn-outline-primary"  @click="alert()"  type="button" id="inputGroupFileAddon04" v-if="submit">Submit</button>
-               </div>
             </div>
             <script src="Script.js" type="text/javascript"></script>
         </div>
