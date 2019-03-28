@@ -24,6 +24,16 @@
                 <!--  Learning about data binding using the v-bind which can also be a :-->
                 <!--  Learning about access modifiers such as prevent and ounce that are used along with the v-on directive that is used for event-on can also be represented as @-->
                 <p>Access latest news here <a @click.prevent="alert" :href="website">BBC</a></p><br>
+
+                <!-- Looping through objects and arrays in vue js using v-for --> 
+                <!--  To loop through objects in an array without having to know their names we use the key value pair idea-->
+                <h1>Today's Highlights</h1>
+                    <template v-for='x in objectArray'>
+                        <div v-for="(val,key) in x">
+                            <h5>{{val}}</h5>
+                        </div>
+                    </template>
+
                 <p>Search articles according to the index here</p>
 
                 <!--  Learning about v-on directive click events that call a given function when clicked. These functions are defined in the methods object of the vue instance-->

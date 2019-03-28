@@ -9,11 +9,11 @@ var vm = new Vue({
         website:'https://www.bbc.com',
         search:'',
         read:true,
-        error:alert("There was a problem creating your account"),
         submit:true,
         objectArray:[
-        {title:"Today's highlights", number:12},
-        {title:"Last Week Highlights", number:10},
+        {title:"Raila's probe for the 2022 presidency"},
+        {title:"The causes of early teenage pregnancy"},
+        {title:"UhuRuto in trobule with the many corruption scandals facing Ruto", number:10},
     ],
     },
     methods: {
